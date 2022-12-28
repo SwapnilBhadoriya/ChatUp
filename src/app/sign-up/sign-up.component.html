@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <h1 class="text-light text-center">ChatUp</h1>
+  
+  <div class="container-fluid border border-info rounded-4">
+    <img
+      src="../assets/account.svg"
+      class="img-fluid h-25 w-25 mx-auto d-block rounded-4"
+      alt=""
+    />
+    {{signUpForm.value|json}}
+    <form
+      #signUpForm="ngForm"
+      class="form-control border text-bg-dark border-0"
+    >
+      <div class="mb-3">
+        <label class="form-label" for="name">Name :</label>
+        <input
+          class="form-control fw-semibold"
+          id="name"
+          type="text"
+          name="name"
+          placeholder="Name"
+          ngModel
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="email">Email :</label>
+        <input
+          class="form-control fw-semibold"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="abc@example.com"ngModel
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="password">Password :</label>
+        <input
+          class="form-control fw-semibold"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Create a password"ngModel
+        />
+        <span id="passwordHelpInline" class="form-text">
+          Must be 8-20 characters long.
+        </span>
+      </div>
+      <div class="input-group">
+        <button type="submit" class="btn btn-primary m-auto">Sign Up</button>
+      </div>
+    </form>
+  </div>
+  <div id="passwordHelpInline" class="mb-3 form-text text-center">
+    Already a user 
+    
+      <button class="btn btn-dark d-block mx-auto fw-bold"(click)="toggle()"> Log In</button>
+   
+  </div>
+  
+</div>
