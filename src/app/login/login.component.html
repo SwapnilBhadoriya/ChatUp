@@ -1,46 +1,49 @@
-<div class="container-fluid">
+<div class="container-fluid vh-100 text-bg-dark">
   <h1 class="text-light text-center">ChatUp</h1>
-</div>
 
-<div class="container-fluid border border-info rounded-4">
-  <img
-    src="../assets/account.svg"
-    class="img-fluid h-25 w-25 mx-auto d-block rounded-4"
-    alt=""
-  />
-  <!-- {{loginForm.value |json}} -->
-  <form #loginForm=ngForm class="form-control border text-bg-dark border-0">
-    <div class="mb-3">
-      <label class="form-label" for="email">Email :</label>
-      <input
-        class="form-control fw-semibold"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="abc@example.com"
-        ngModel
-      />
-    </div>
+  <div
+    class="container-fluid border border-info rounded-4"
+    style="max-width: 450px"
+  >
+    <img
+      src="../assets/account.svg"
+      class="img-fluid h-25 w-25 mx-auto d-block rounded-4"
+      alt=""
+    />
+    <!-- {{loginForm.value |json}} -->
+    <form #loginForm="ngForm" class="form-control border text-bg-dark border-0">
+      <div class="mb-3">
+        <label class="form-label" for="email">Email :</label>
+        <input
+          class="form-control fw-semibold"
+          type="email"
+          id="email"
+          name="email"
+          placeholder="abc@example.com"
+          ngModel
+        />
+      </div>
 
-    <div class="mb-3">
-      <label class="form-label" for="password">Password :</label>
-      <input
-        class="form-control fw-semibold"
-        type="password"
-        name="password"
-        id="password"
-        placeholder="Password"
-        ngModel
-      />
-    </div>
-    <div class="input-group">
-      <button type="submit" class="btn btn-primary m-auto">Log In</button>
-    </div>
-  </form>
-</div>
-<div id="passwordHelpInline" class="mb-3 form-text text-center">
-  Not regiseterd yet
-  <button class="btn btn-dark fw-bold d-block mx-auto" (click)="toggle()">
-    Sign Up here
-  </button>
+      <div class="mb-3">
+        <label class="form-label" for="password">Password :</label>
+        <input
+          class="form-control fw-semibold"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+          ngModel
+        />
+      </div>
+      <div class="input-group">
+        <button type="submit" class="btn btn-primary m-auto" (click)="UserLogIn(loginForm.value)">Log In</button>
+      </div>
+    </form>
+  </div>
+  <div id="passwordHelpInline" class="mb-3 form-text text-center">
+    Not regiseterd yet
+    <button class="btn btn-dark fw-bold d-block mx-auto" routerLink="/">
+      Sign Up here
+    </button>
+  </div>
 </div>

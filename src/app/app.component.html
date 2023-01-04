@@ -1,4 +1,12 @@
-<div class="d-flex align-items-center justify-content-center vh-100 text-bg-dark">
-  <app-sign-up *ngIf="!isOld" [(isOld)]="isOld" (isOldChange)="isOld = $event"></app-sign-up>
-  <app-login *ngIf="isOld"[isOld]="isOld" (isOldChange)="isOld = $event"></app-login>
-</div>
+<router-outlet></router-outlet>
+
+<!-- <app-sign-up
+  *ngIf="!isOld"
+  [(isOld)]="isOld"
+  (isOldChange)="isOld = $event"
+></app-sign-up>
+<app-login
+  *ngIf="isOld"
+  [isOld]="isOld"
+  (isOldChange)="isOld = $event"
+></app-login> -->

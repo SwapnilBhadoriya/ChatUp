@@ -1,18 +1,24 @@
-import { Component,Input ,Output,EventEmitter} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css']
+  styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent {
-@Input() isOld:any;
-@Output() isOldChange = new EventEmitter();
+ 
+  constructor(private http: HttpClient) {}
 
-toggle(){
-  this.isOld = !this.isOld;
-  console.log(this.isOld);
-  this.isOldChange.emit(this.isOld);
-}
+  
 
+  
+  createUser(userdata: any) {
+    console.log(userdata);
+    this.http.post('user/signUp', userdata).subscribe((res:any) => {
+      console.log(res.token);
+      localStorage.setItem('token',res.token);
+
+    });
+  }
 }
